@@ -8,6 +8,7 @@ import { Card } from '../card-item/card.model'
 })
 export class CardsListComponent implements OnInit {
 
+
   cards: Card[]
 
   constructor() {
@@ -24,5 +25,11 @@ export class CardsListComponent implements OnInit {
   clearList() {
     this.cards = [];
   }
+
+  addCard(card: Card): boolean {
+    this.cards.push(card);
+    return false;
+  }
+
 
 }
