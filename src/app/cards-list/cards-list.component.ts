@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Card } from '../card-item/card.model'
 
 @Component({
   selector: 'cards-list',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsListComponent implements OnInit {
 
-  constructor() { }
+  cards: Card[]
+
+  constructor() {
+    this.cards = [
+      new Card("Aluko Bukunmi", "544444444444", "042021", "123"),
+      new Card("Aluko Bukunmi", "444444444444", "042021", "123"),
+      new Card("Aluko Bukunmi", "344444444444", "042021", "123")
+    ];
+  }
 
   ngOnInit(): void {
+  }
+
+  clearList() {
+    this.cards = [];
   }
 
 }
