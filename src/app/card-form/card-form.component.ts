@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Card } from '../card-item/card.model'
 
 @Component({
   selector: 'card-form',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardFormComponent implements OnInit {
 
-  constructor() { }
+  card: Card;
+
+  @Output() onCardSaved: EventEmitter<Card>;
+
+  constructor() {
+    this.card = new Card("", "", "", "");
+    this.onCardSaved = new EventEmitter();
+  }
 
   ngOnInit(): void {
+  }
+
+  saveCard(card: Card): void {
+    this.onCardSaved.emit(card);
   }
 
 }

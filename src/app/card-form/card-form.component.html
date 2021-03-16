@@ -13,27 +13,30 @@
             </div>
           </div>
 
-          <form class="new-item-form">
+          <form #myForm="ngForm" (ngSubmit)="saveCard(myForm.value)" class="new-item-form">
             <div class="card-body" style="height: 350px">
               <div class="form-group"> <label for="cc-number" class="control-label">CARD NUMBER</label> <input
                   id="cc-number" type="tel" class="input-lg form-control cc-number" autocomplete="cc-number"
-                  placeholder="•••• •••• •••• ••••" required> </div>
+                  placeholder="•••• •••• •••• ••••" required name="number" [(ngModel)]='card.number'> </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group"> <label for="cc-exp" class="control-label">CARD EXPIRY</label> <input
                       id="cc-exp" type="tel" class="input-lg form-control cc-exp" autocomplete="cc-exp"
-                      placeholder="•• / ••" required> </div>
+                      placeholder="•• / ••" required name="expiry" [(ngModel)]='card.expiry'> </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group"> <label for="cc-cvc" class="control-label">CARD CVC</label> <input id="cc-cvc"
-                      type="tel" class="input-lg form-control cc-cvc" autocomplete="off" placeholder="••••" required>
+                      type="tel" class="input-lg form-control cc-cvc" autocomplete="off" placeholder="••••" required
+                      name="cvc" [(ngModel)]='card.cvc'>
                   </div>
                 </div>
               </div>
               <div class="form-group"> <label for="numeric" class="control-label">CARD HOLDER NAME</label>
-                <input id="cc-holder-name" type="text" class="input-lg form-control">
+                <input id="cc-holder-name" type="text" class="input-lg form-control" name="name"
+                  [(ngModel)]='card.name'>
               </div>
-              <button class="btn btn-success btn-lg form-control" style="font-size: .8rem;">SAVE CARD</button>
+              <button type="submit" class="btn btn-success btn-lg form-control" style="font-size: .8rem;">SAVE
+                CARD</button>
 
               <!-- <div class="form-group"> <input value="MAKE PAYMENT" type="button"
                           class="btn btn-success btn-lg form-control" style="font-size: .8rem;">

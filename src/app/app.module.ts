@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CardsListComponent } from './cards-list/cards-list.component';
 import { CardItemComponent } from './card-item/card-item.component';
 import { CardFormComponent } from './card-form/card-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { CardFormComponent } from './card-form/card-form.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
