@@ -126,7 +126,7 @@
       <!-- Table space -->
       <div class="col-8">
         <h4>List</h4>
-        <cards-list [cards]="cards"></cards-list>
+        <cards-list [cards]="cards" (clearListEmitter)="clearList()"></cards-list>
       </div>
 
     </div>

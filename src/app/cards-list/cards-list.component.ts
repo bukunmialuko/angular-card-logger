@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Card } from '../card-item/card.model'
 
 @Component({
@@ -8,16 +8,21 @@ import { Card } from '../card-item/card.model'
 })
 export class CardsListComponent implements OnInit {
 
+  @Output() clearListEmitter: EventEmitter<number>;
+
+
   @Input() cards: Card[]
 
   constructor() {
+    this.clearListEmitter = new EventEmitter();
   }
 
   ngOnInit(): void {
   }
 
   clearList() {
-    this.cards = [];
+    console.log("clearList 1")
+    this.clearListEmitter.emit(0)
   }
 
   addCard(card: Card): boolean {

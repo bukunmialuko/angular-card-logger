@@ -21,4 +21,9 @@ export class AppComponent {
   onCardSaved(card: Card): void {
     this.cards.push(card);
   }
+
+  clearList() {
+    console.log("Emmits")
+    this.cards = [];
+  }
 }
