@@ -10,6 +10,7 @@ export class Card {
         this.expiry = expiry;
         this.cvc = cvc;
     }
+
     format() {
         return `NAME: ${this.name} \n NUMBER: ${this.number} \n EXPIRY: ${this.expiry} \n CVC: ${this.cvc}`;
     }

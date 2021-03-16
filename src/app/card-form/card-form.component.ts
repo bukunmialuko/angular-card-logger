@@ -21,7 +21,7 @@ export class CardFormComponent implements OnInit {
   }
 
   saveCard(card: Card): void {
-    this.onCardSaved.emit(card);
+    this.onCardSaved.emit(new Card(card.name, card.number, card.expiry, card.expiry));
   }
 
 }

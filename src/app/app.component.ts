@@ -8,7 +8,17 @@ import { Card } from './card-item/card.model'
 })
 export class AppComponent {
 
+  cards: Card[]
+
+  constructor() {
+    this.cards = [
+      new Card("Aluko Bukunmi", "544444444444", "042021", "123"),
+      new Card("Aluko Bukunmi", "444444444444", "042021", "123"),
+      new Card("Aluko Bukunmi", "344444444444", "042021", "123")
+    ];
+  }
+
   onCardSaved(card: Card): void {
-    console.log('Card details: ', card);
+    this.cards.push(card);
   }
 }
